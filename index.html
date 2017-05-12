@@ -265,12 +265,36 @@ function Calc(){
   {
     char_red1_damage=Math.floor(rand*char_atk*0.5*((atk_up+char_red_as_per)/100)*char_red1_weight*(1+chain/100));
   }
-	d11=Math.floor(r*a1*0.5*cr11*as11*(1+c/100));
-	d12=Math.floor(r*a1*0.5*cr12*as12*(1+c/100));
-	d13=Math.floor(r*a1*0.5*cr13*as13*(1+c/100));
 
-	document.getElementById("char_red1_damage").value=char_red1_damage;
-	document.getElementById("d12").value=d12;
-	document.getElementById("d13").value=d13;
+  char_red2_damage=1000;
+  char_red_total=1000;
+  char_blue1_damage=1000;
+  char_blue2_damage=1000;
+  char_blue_total=1000;
+  char_yellow1_damage=1000;
+  char_yellow2_damage=1000;
+  char_yellow_total=1000;
+  char_white1_damage=1000;
+  char_white2_damage=1000;	
+  char_white_total=1000;
+  char_black1_damage=1000;	
+  char_black2_damage=1000;
+  char_black_total=1000;
+
+  document.getElementById("char_red1_damage").value=char_red1_damage;
+  document.getElementById("char_red2_damage").value=char_red2_damage;
+  document.getElementById("char_red_total").value=char_red_total;
+  document.getElementById("char_blue1_damage").value=char_blue1_damage;
+  document.getElementById("char_blue2_damage").value=char_blue2_damage;
+  document.getElementById("char_blue_total").value=char_blue_total;
+  document.getElementById("char_yellow1_damage").value=char_yellow1_damage;
+  document.getElementById("char_yellow2_damage").value=char_yellow2_damage;
+  document.getElementById("char_yellow_total").value=char_yellow_total;
+  document.getElementById("char_white1_damage").value=char_white1_damage;
+  document.getElementById("char_white2_damage").value=char_white2_damage;
+  document.getElementById("char_white_total").value=char_white_total;
+  document.getElementById("char_black1_damage").value=char_black1_damage;
+  document.getElementById("char_black2_damage").value=char_black2_damage;
+  document.getElementById("char_black_total").value=char_black_total;
 }
 </script>
