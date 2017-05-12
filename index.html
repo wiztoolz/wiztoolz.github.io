@@ -148,11 +148,6 @@ function Calc(){
 		break;
 	}
 
-	if ( isNan(char_red2_weight) )
-	{
-		char_red2_weight=0;    
-	}
-
 	if ( pannel_type==2 )
 	{
 		char_red1_damage=Math.floor(rand*char_atk*0.5*((atk_up+char_red_as_per)/100)*char_red1_weight*(1+chain/100)*0.5);
@@ -161,21 +156,109 @@ function Calc(){
 	{
 		char_red1_damage=Math.floor(rand*char_atk*0.5*((atk_up+char_red_as_per)/100)*char_red1_weight*(1+chain/100));
 	}
+	if ( pannel_type==1 )
+	{
+		char_red2_damage=Math.floor(rand*char_atk*0.5*((atk_up+char_red_as_per)/100)*char_red2_weight*(1+chain/100)*0.5);
+	}
+	else
+	{
+		char_red2_damage=Math.floor(rand*char_atk*0.5*((atk_up+char_red_as_per)/100)*char_red2_weight*(1+chain/100));
+	}
+	
+	if ( pannel_type==2 )
+	{
+		char_blue1_damage=Math.floor(rand*char_atk*0.5*((atk_up+char_blue_as_per)/100)*char_blue1_weight*(1+chain/100)*0.5);
+	}
+	else
+	{
+		char_blue1_damage=Math.floor(rand*char_atk*0.5*((atk_up+char_blue_as_per)/100)*char_blue1_weight*(1+chain/100));
+	}
+	if ( pannel_type==1 )
+	{
+		char_blue2_damage=Math.floor(rand*char_atk*0.5*((atk_up+char_blue_as_per)/100)*char_blue2_weight*(1+chain/100)*0.5);
+	}
+	else
+	{
+		char_blue2_damage=Math.floor(rand*char_atk*0.5*((atk_up+char_blue_as_per)/100)*char_blue2_weight*(1+chain/100));
+	}
+	
+	if ( pannel_type==2 )
+	{
+		char_yellow1_damage=Math.floor(rand*char_atk*0.5*((atk_up+char_yellow_as_per)/100)*char_yellow1_weight*(1+chain/100)*0.5);
+	}
+	else
+	{
+		char_yellow1_damage=Math.floor(rand*char_atk*0.5*((atk_up+char_yellow_as_per)/100)*char_yellow1_weight*(1+chain/100));
+	}
+	if ( pannel_type==1 )
+	{
+		char_yellow2_damage=Math.floor(rand*char_atk*0.5*((atk_up+char_yellow_as_per)/100)*char_yellow2_weight*(1+chain/100)*0.5);
+	}
+	else
+	{
+		char_yellow2_damage=Math.floor(rand*char_atk*0.5*((atk_up+char_yellow_as_per)/100)*char_yellow2_weight*(1+chain/100));
+	}	
 
-	char_red2_damage=1000;
-	char_red_total=1000;
-	char_blue1_damage=1000;
-	char_blue2_damage=1000;
-	char_blue_total=1000;
-	char_yellow1_damage=1000;
-	char_yellow2_damage=1000;
-	char_yellow_total=1000;
-	char_white1_damage=1000;
-	char_white2_damage=1000;	
-	char_white_total=1000;
-	char_black1_damage=1000;	
-	char_black2_damage=1000;
-	char_black_total=1000;
+	if ( pannel_type==2 )
+	{
+		char_white1_damage=Math.floor(rand*char_atk*0.5*((atk_up+char_white_as_per)/100)*char_white1_weight*(1+chain/100)*0.5);
+	}
+	else
+	{
+		char_white1_damage=Math.floor(rand*char_atk*0.5*((atk_up+char_white_as_per)/100)*char_white1_weight*(1+chain/100));
+	}
+	if ( pannel_type==1 )
+	{
+		char_white2_damage=Math.floor(rand*char_atk*0.5*((atk_up+char_white_as_per)/100)*char_white2_weight*(1+chain/100)*0.5);
+	}
+	else
+	{
+		char_white2_damage=Math.floor(rand*char_atk*0.5*((atk_up+char_white_as_per)/100)*char_white2_weight*(1+chain/100));
+	}
+
+	if ( pannel_type==2 )
+	{
+		char_black1_damage=Math.floor(rand*char_atk*0.5*((atk_up+char_black_as_per)/100)*char_black1_weight*(1+chain/100)*0.5);
+	}
+	else
+	{
+		char_black1_damage=Math.floor(rand*char_atk*0.5*((atk_up+char_black_as_per)/100)*char_black1_weight*(1+chain/100));
+	}
+	if ( pannel_type==1 )
+	{
+		char_black2_damage=Math.floor(rand*char_atk*0.5*((atk_up+char_black_as_per)/100)*char_black2_weight*(1+chain/100)*0.5);
+	}
+	else
+	{
+		char_black2_damage=Math.floor(rand*char_atk*0.5*((atk_up+char_black_as_per)/100)*char_black2_weight*(1+chain/100));
+	}
+	
+	if ( isNaN(char_red2_damage) )
+	{
+		char_red2_damage = 0;
+	}
+	if ( isNaN(char_blue2_damage) )
+	{
+		char_blue2_damage = 0;
+	}
+	if ( isNaN(char_yellow2_damage) )
+	{
+		char_yellow2_damage = 0;
+	}
+	if ( isNaN(char_white2_damage) )
+	{
+		char_white2_damage = 0;
+	}
+	if ( isNaN(char_black2_damage) )
+	{
+		char_black2_damage = 0;
+	}
+	
+	char_red_total=char_red1_damage+char_red2_damage;
+	char_blue_total=char_blue1_damage+char_blue2_damage;
+	char_yellow_total=char_yellow1_damage+char_yellow2_damage;
+	char_white_total=char_white1_damage+char_white2_damage;	
+	char_black_total=char_black1_damage+char_black2_damage;
 
 	document.getElementById("char_red1_damage").value=char_red1_damage;
 	document.getElementById("char_red2_damage").value=char_red2_damage;
@@ -255,7 +338,7 @@ function Calc(){
 <th>산출데미지 : 메인/서브</th>
 </tr>
 <tr>		
-<td>화몹에 : <input id="char_red1_damage" type="text" size="5" readonly=""> / <input id="char_red2_damage" type="text" size="5" readonly=""> = <input id="char_red_total" type="text" size="5" readonly="">
+<td>화몹에 : <input id="char_red1_damage" type="text" size="5" readonly> / <input id="char_red2_damage" type="text" size="5" readonly=""> = <input id="char_red_total" type="text" size="5" readonly="">
 <br>			
 수몹에 : <input id="char_blue1_damage" type="text" size="5" readonly=""> / <input id="char_blue2_damage" type="text" size="5" readonly=""> = <input id="char_blue_total" type="text" size="5" readonly="">
 <br>			
