@@ -1,319 +1,300 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
- <head>
- </head>
+<head>
+<meta charset="EUC-KR">
+<title>wiz damage calc</title>
+</head>
+<body>
+<script>
+function Calc(){
+	var rand;
+	var chain;
+	var atk_up;
+	var char_type1;
+	var char_type2;
+	var pannel_type;
+	var char_atk;
+	var char_red_as_per;
+	var char_blue_as_per;
+	var char_yellow_as_per;
+	var char_white_as_per;
+	var char_black_as_per;
+	var char_red1_damage;
+	var char_red2_damage;
+	var char_red_total;
+	var char_blue1_damage;
+	var char_blue2_damage;
+	var char_blue_total;
+	var char_yellow1_damage;
+	var char_yellow2_damage;
+	var char_yellow_total;
+	var char_white1_damage;
+	var char_white2_damage;
+	var char_white_total;
+	var char_black1_damage;
+	var char_black2_damage;
+	var char_black_total;
+	var char_red1_weight;
+	var char_red2_weight;
+	var char_blue1_weight;
+	var char_blue2_weight;
+	var char_yellow1_weight;
+	var char_yellow2_weight;
+	var char_white1_weight;
+	var char_white2_weight;
+	var char_black1_weight;
+	var char_black2_weight;
 
- <body>
-	최소데미지 계산기(소숫점 내림계산)<br><br>
-	<font size="1">
-	<br>
-		<script>
-function Cal(){
-	var r; //난수(0.9~1.1)
-	var cr11; //1번카드화속성 속성배율
-	var cr12; //1번카드수속성 속성배율
-	var cr13; //1번카드뇌속성 속성배율
-	var cr21; //2번카드화속성 속성배율
-	var cr22; //2번카드수속성 속성배율
-	var cr23; //2번카드뇌속성 속성배율
-	var cr31; //3번카드화속성 속성배율
-	var cr32; //3번카드수속성 속성배율
-	var cr33; //3번카드뇌속성 속성배율
-	var cr41; //4번카드화속성 속성배율
-	var cr42; //4번카드수속성 속성배율
-	var cr43; //4번카드뇌속성 속성배율
-	var cr51; //5번카드화속성 속성배율
-	var cr52; //5번카드수속성 속성배율
-	var cr53; //5번카드뇌속성 속성배율
-	var c; //체인수
-	var c1; //1번카드 속성
-	var a1; //1번카드 최종공격력
-	var as11; //1번카드 화속성 AS배율
-	var as12; //1번카드 수속성 AS배율
-	var as13; //1번카드 뇌속성 AS배율
-	var d11; //1번카드 화속성 데미지
-	var d12; //1번카드 수속성 데미지
-	var d13 //1번카드 뇌속성 데미지
-	var c2; //2번카드 속성
-	var a2; //2번카드 최종공격력
-	var as21; //2번카드 화속성 AS배율
-	var as22; //2번카드 수속성 AS배율
-	var as23; //2번카드 뇌속성 AS배율
-	var d21; //2번카드 화속성 데미지
-	var d22; //2번카드 수속성 데미지
-	var d23; //2번카드 뇌속성 데미지
-	var c3; //3번카드 속성
-	var a3; //3번카드 최종공격력
-	var as31; //3번카드 화속성 AS배율
-	var as32; //3번카드 수속성 AS배율
-	var as33; //3번카드 뇌속성 AS배율
-	var d31; //3번카드 화속성 데미지
-	var d32; //3번카드 수속성 데미지
-	var d33; //3번카드 뇌속성 데미지
-	var c4; //4번카드 속성
-	var a4; //4번카드 최종공격력
-	var as41; //4번카드 화속성 AS배율
-	var as42; //4번카드 수속성 AS배율
-	var as43; //4번카드 뇌속성 AS배율
-	var d41; //4번카드 화속성 데미지
-	var d42; //4번카드 수속성 데미지
-	var d43; //4번카드 뇌속성 데미지
-	var c5; //5번카드 속성
-	var a5; //5번카드 최종공격력
-	var as51; //5번카드 화속성 AS배율
-	var as52; //5번카드 수속성 AS배율
-	var as53; //5번카드 뇌속성 AS배율
-	var d51; //5번카드 화속성 데미지
-	var d52; //5번카드 수속성 데미지
-	var d53; //5번카드 뇌속성 데미지
-	c=document.getElementById("c").value;
-	c1=document.getElementById("c1").value;
-	c2=document.getElementById("c2").value;
-	c3=document.getElementById("c3").value;
-	c4=document.getElementById("c4").value;
-	c5=document.getElementById("c5").value;
-	a1=document.getElementById("a1").value;
-	as11=document.getElementById("as11").value;
-	as12=document.getElementById("as12").value;
-	as13=document.getElementById("as13").value;
-	a2=document.getElementById("a2").value;
-	as21=document.getElementById("as21").value;
-	as22=document.getElementById("as22").value;
-	as23=document.getElementById("as23").value;
-	a3=document.getElementById("a3").value;
-	as31=document.getElementById("as31").value;
-	as32=document.getElementById("as32").value;
-	as33=document.getElementById("as33").value;
-	a4=document.getElementById("a4").value;
-	as41=document.getElementById("as41").value;
-	as42=document.getElementById("as42").value;
-	as43=document.getElementById("as43").value;
-	a5=document.getElementById("a5").value;
-	as51=document.getElementById("as51").value;
-	as52=document.getElementById("as52").value;
-	as53=document.getElementById("as53").value;
-	r=0.9; //난수는 0.9 최소로 확정
-	c=Number(c);
-	c1=Number(c1);
-	c2=Number(c2);
-	c3=Number(c3);
-	c4=Number(c4);
-	c5=Number(c5);
-	a1=Number(a1);
-	as11=Number(as11);
-	as12=Number(as12);
-	as13=Number(as13);
-	a2=Number(a2);
-	as21=Number(as21);
-	as22=Number(as22);
-	as23=Number(as23);
-	a3=Number(a3);
-	as31=Number(as31);
-	as32=Number(as32);
-	as33=Number(as33);
-	a4=Number(a4);
-	as41=Number(as41);
-	as42=Number(as42);
-	as43=Number(as43);
-	a5=Number(a5);
-	as51=Number(as51);
-	as52=Number(as52);
-	as53=Number(as53);
+	rand=document.getElementById("rand").value;
+	chain=document.getElementById("chain").value;
+	atk_up=document.getElementById("atk_up").value;
+	char_type1=document.getElementById("char_type1").value;
+	char_type2=document.getElementById("char_type2").value;
+	pannel_type=document.getElementById("pannel_type").value;
+	char_atk=document.getElementById("char_atk").value;
+	char_red_as_per=document.getElementById("char_red_as_per").value;
+	char_blue_as_per=document.getElementById("char_blue_as_per").value;
+	char_yellow_as_per=document.getElementById("char_yellow_as_per").value;
+	char_white_as_per=document.getElementById("char_white_as_per").value;
+	char_black_as_per=document.getElementById("char_black_as_per").value;
 
-	if (c1==1)
-	{cr11=1,cr12=0.5,cr13=1.5;
-	}
-	else if (c1==2)
-	{cr11=1.5,cr12=1,cr13=0.5;
-	}
-	else
-	{cr11=0.5,cr12=1.5,cr13=1;
+	rand=Number(rand);
+	chain=Number(chain);
+	atk_up=Number(atk_up);
+	char_type1=Number(char_type1);
+	char_type2=Number(char_type2);
+	pannel_type=Number(pannel_type);
+	char_atk=Number(char_atk);
+	char_red_as_per=Number(char_red_as_per);
+	char_blue_as_per=Number(char_blue_as_per);
+	char_yellow_as_per=Number(char_yellow_as_per);
+	char_white_as_per=Number(char_white_as_per);
+	char_black_as_per=Number(char_black_as_per);
+
+	switch(char_type1)
+	{
+	case 1:
+		{
+			char_red1_weight=1;
+			char_blue1_weight=0.5;
+			char_yellow1_weight=1.5;
+			char_white1_weight=1;
+			char_black1_weight=1;        
+			break;
+		}
+	case 2:
+		{
+			char_red1_weight=1.5;
+			char_blue1_weight=1;
+			char_yellow1_weight=0.5;
+			char_white1_weight=1;
+			char_black1_weight=1;        
+			break;
+		}
+	case 3:
+		{
+			char_red1_weight=0.5;
+			char_blue1_weight=1.5;
+			char_yellow1_weight=1;
+			char_white1_weight=1;
+			char_black1_weight=1;        
+			break;
+		}
+	case 4:
+		{
+			char_red1_weight=1;
+			char_blue1_weight=1;
+			char_yellow1_weight=1;
+			char_white1_weight=1;
+			char_black1_weight=1.5;        
+			break;
+		} 
+	case 5:
+		{
+			char_red1_weight=11;
+			char_blue1_weight=1;
+			char_yellow1_weight=1;
+			char_white1_weight=1.5;
+			char_black1_weight=1;        
+			break;
+		} 
 	}
 
-	d11=Math.floor(r*a1*0.5*cr11*as11*(1+c/100));
-	d12=Math.floor(r*a1*0.5*cr12*as12*(1+c/100));
-	d13=Math.floor(r*a1*0.5*cr13*as13*(1+c/100));
-
-	document.getElementById("d11").value=d11;
-	document.getElementById("d12").value=d12;
-	document.getElementById("d13").value=d13;
-
-	if (c2==1)
-	{cr21=1,cr22=0.5,cr23=1.5;
+	switch(char_type2)
+	{
+	case 1:
+		{
+			char_red2_weight=1;
+			char_blue2_weight=0.5;
+			char_yellow2_weight=1.5;
+			char_white2_weight=1;
+			char_black2_weight=1;        
+			break;
+		}
+	case 2:
+		{
+			char_red2_weight=1.5;
+			char_blue2_weight=1;
+			char_yellow2_weight=0.5;
+			char_white2_weight=1;
+			char_black2_weight=1;        
+			break;
+		}
+	case 3:
+		{
+			char_red2_weight=0.5;
+			char_blue2_weight=1.5;
+			char_yellow2_weight=1;
+			char_white2_weight=1;
+			char_black2_weight=1;        
+			break;
+		}
+	case 4:
+		{
+			char_red2_weight=1;
+			char_blue2_weight=1;
+			char_yellow2_weight=1;
+			char_white2_weight=1;
+			char_black2_weight=1.5;        
+			break;
+		} 
+	case 5:
+		{
+			char_red2_weight=11;
+			char_blue2_weight=1;
+			char_yellow2_weight=1;
+			char_white2_weight=1.5;
+			char_black2_weight=1;        
+			break;
+		} 
 	}
-	else if (c2==2)
-	{cr21=1.5,cr22=1,cr23=0.5;
-	}
-	else
-	{cr21=0.5,cr22=1.5,cr23=1;
-	}
 
-	d21=Math.floor(r*a2*0.5*cr21*as21*(1+c/100));
-	d22=Math.floor(r*a2*0.5*cr22*as22*(1+c/100));
-	d23=Math.floor(r*a2*0.5*cr23*as23*(1+c/100));
-
-	document.getElementById("d21").value=d21;
-	document.getElementById("d22").value=d22;
-	document.getElementById("d23").value=d23;
-
-	if (c3==1)
-	{cr31=1,cr32=0.5,cr33=1.5;
-	}
-	else if (c3==2)
-	{cr31=1.5,cr32=1,cr33=0.5;
-	}
-	else
-	{cr31=0.5,cr32=1.5,cr33=1;
+	if ( isNan(char_red2_weight) )
+	{
+		char_red2_weight=0;    
 	}
 
-	d31=Math.floor(r*a3*0.5*cr31*as31*(1+c/100));
-	d32=Math.floor(r*a3*0.5*cr32*as32*(1+c/100));
-	d33=Math.floor(r*a3*0.5*cr33*as33*(1+c/100));
-
-	document.getElementById("d31").value=d31;
-	document.getElementById("d32").value=d32;
-	document.getElementById("d33").value=d33;
-
-	if (c4==1)
-	{cr41=1,cr42=0.5,cr43=1.5;
-	}
-	else if (c4==2)
-	{cr41=1.5,cr42=1,cr43=0.5;
+	if ( pannel_type==2 )
+	{
+		char_red1_damage=Math.floor(rand*char_atk*0.5*((atk_up+char_red_as_per)/100)*char_red1_weight*(1+chain/100)*0.5);
 	}
 	else
-	{cr41=0.5,cr42=1.5,cr43=1;
+	{
+		char_red1_damage=Math.floor(rand*char_atk*0.5*((atk_up+char_red_as_per)/100)*char_red1_weight*(1+chain/100));
 	}
 
-	d41=Math.floor(r*a4*0.5*cr41*as41*(1+c/100));
-	d42=Math.floor(r*a4*0.5*cr42*as42*(1+c/100));
-	d43=Math.floor(r*a4*0.5*cr43*as43*(1+c/100));
+	char_red2_damage=1000;
+	char_red_total=1000;
+	char_blue1_damage=1000;
+	char_blue2_damage=1000;
+	char_blue_total=1000;
+	char_yellow1_damage=1000;
+	char_yellow2_damage=1000;
+	char_yellow_total=1000;
+	char_white1_damage=1000;
+	char_white2_damage=1000;	
+	char_white_total=1000;
+	char_black1_damage=1000;	
+	char_black2_damage=1000;
+	char_black_total=1000;
 
-	document.getElementById("d41").value=d41;
-	document.getElementById("d42").value=d42;
-	document.getElementById("d43").value=d43;
-
-	if (c5==1)
-	{cr51=1,cr52=0.5,cr53=1.5;
-	}
-	else if (c5==2)
-	{cr51=1.5,cr52=1,cr53=0.5;
-	}
-	else
-	{cr51=0.5,cr52=1.5,cr53=1;
-	}
-
-	d51=Math.floor(r*a5*0.5*cr51*as51*(1+c/100));
-	d52=Math.floor(r*a5*0.5*cr52*as52*(1+c/100));
-	d53=Math.floor(r*a5*0.5*cr53*as53*(1+c/100));
-
-	document.getElementById("d51").value=d51;
-	document.getElementById("d52").value=d52;
-	document.getElementById("d53").value=d53;
-
+	document.getElementById("char_red1_damage").value=char_red1_damage;
+	document.getElementById("char_red2_damage").value=char_red2_damage;
+	document.getElementById("char_red_total").value=char_red_total;
+	document.getElementById("char_blue1_damage").value=char_blue1_damage;
+	document.getElementById("char_blue2_damage").value=char_blue2_damage;
+	document.getElementById("char_blue_total").value=char_blue_total;
+	document.getElementById("char_yellow1_damage").value=char_yellow1_damage;
+	document.getElementById("char_yellow2_damage").value=char_yellow2_damage;
+	document.getElementById("char_yellow_total").value=char_yellow_total;
+	document.getElementById("char_white1_damage").value=char_white1_damage;
+	document.getElementById("char_white2_damage").value=char_white2_damage;
+	document.getElementById("char_white_total").value=char_white_total;
+	document.getElementById("char_black1_damage").value=char_black1_damage;
+	document.getElementById("char_black2_damage").value=char_black2_damage;
+	document.getElementById("char_black_total").value=char_black_total;
 }
-
-
-		</script>
-
-	난수0.9(최소데미지)<br><br>
-	최소데미지 계산식=난수(0.9)*0.5*공격력(잠능계산후 최종공격력)*속성배율(유리속성1.5/동속1/불리속성0.5)*AS배율*(1+체인/100)<br><br>
-
-	계산할 체인수 : <select id="c" type="text">
-								<option value="1">1</option>
-								<option value="2">2</option>
-								<option value="3">3</option>
-								<option value="4">4</option>
-								<option value="5">5</option>
-								<option value="6">6</option>
-								<option value="7">7</option>
-								<option value="8">8</option>
-								<option value="9">9</option>
-								<option value="10">10</option>
-								<option value="11">11</option>
-								<option value="12">12</option>
-								<option value="13">13</option>
-								<option value="14">14</option>
-								<option value="15">15</option>
-								<option value="16">16</option>
-								<option value="17">17</option>
-								<option value="18">18</option>
-								<option value="19">19</option>
-								<option value="20">20</option>
-							</select><br>
-	<table border="1">
-	<tr>
-		<th>1번카드</th>
-		<th>2번카드</th>
-		<th>3번카드</th>
-		<th>4번카드</th>
-		<th>5번카드</th>
-	</tr>
-	<tr>
-		<td>속성 : <select id="c1" type="text">
-										<option value="1">화속</option>
-										<option value="2">수속</option>
-										<option value="3">뇌속</option>
-									</select><br>
-				공격력 : <input id="a1" type="text" size=5><br>
-				화속성 AS배율 : <input id="as11" type="text" size=5><br>
-				수속성 AS배율 : <input id="as12" type="text" size=5><br>
-				뇌속성 AS배율 : <input id="as13" type="text" size=5><br>
-		<td>속성 : <select id="c2" type="text">
-										<option value="1">화속</option>
-										<option value="2">수속</option>
-										<option value="3">뇌속</option>
-									</select><br>
-				공격력 : <input id="a2" type="text" size=5><br>
-				화속성 AS배율 : <input id="as21" type="text"size=5><br>
-				수속성 AS배율 : <input id="as22" type="text" size=5><br>
-				뇌속성 AS배율 : <input id="as23" type="text" size=5><br>
-		<td>속성 : <select id="c3"type="text">
-										<option value="1">화속</option>
-										<option value="2">수속</option>
-										<option value="3">뇌속</option>
-									</select><br>
-				공격력 : <input id="a3" type="text" size=5><br>
-				화속성 AS배율 : <input id="as31" type="text" size=5><br>
-				수속성 AS배율 : <input id="as32" type="text" size=5><br>
-				뇌속성 AS배율 : <input id="as33" type="text" size=5><br>
-		<td>속성 : <select id="c4" type="text">
-										<option value="1">화속</option>
-										<option value="2">수속</option>
-										<option value="3">뇌속</option>
-									</select><br>
-				공격력 : <input id="a4" type="text" size=5><br>
-				화속성 AS배율 : <input id="as41" type="text" size=5><br>
-				수속성 AS배율 : <input id="as42" type="text" size=5><br>
-				뇌속성 AS배율 : <input id="as43" type="text" size=5><br>
-		<td>속성 : <select id="c5"type="text">
-										<option value="1">화속</option>
-										<option value="2">수속</option>
-										<option value="3">뇌속</option>
-									</select><br>
-				공격력 : <input id="a5" type="text" size=5><br>
-				화속성 AS배율 : <input id="as51" type="text" size=5><br>
-				수속성 AS배율 : <input id="as52" type="text" size=5><br>
-				뇌속성 AS배율 : <input id="as53" type="text" size=5><br>
-	</tr>
-	<tr>
-		<td>화속성 최종 데미지 : <input id="d11" type="text" readonly size=5><br>
-				수속성 최종 데미지 : <input id="d12" type="text" readonly size=5><br>
-				뇌속성 최종 데미지 : <input id="d13" type="text" readonly size=5><br>
-		<td>화속성 최종 데미지 : <input id="d21" type="text" readonly size=5><br>
-				수속성 최종 데미지 : <input id="d22" type="text" readonly size=5><br>
-				뇌속성 최종 데미지 : <input id="d23" type="text" readonly size=5><br>
-		<td>화속성 최종 데미지 : <input id="d31" type="text" readonly size=5><br>
-				수속성 최종 데미지 : <input id="d32" type="text" readonly size=5><br>
-				뇌속성 최종 데미지 : <input id="d33" type="text" readonly size=5><br>
-		<td>화속성 최종 데미지 : <input id="d41" type="text" readonly size=5><br>
-				수속성 최종 데미지 : <input id="d42" type="text" readonly size=5><br>
-				뇌속성 최종 데미지 : <input id="d43" type="text" readonly size=5><br>
-		<td>화속성 최종 데미지 : <input id="d51" type="text" readonly size=5><br>
-				수속성 최종 데미지 : <input id="d52" type="text" readonly size=5><br>
-				뇌속성 최종 데미지 : <input id="d53" type="text" readonly size=5><br>
-	</tr>
-	</table><br>
-	<input type="button" value="계산" onclick="Cal();">
-
- </body>
+</script>
+	
+<font size="2">
+<br>
+난수 : <select id="rand" type="text">
+<option value="0.9">0.9</option>			
+<option value="1.0">1.0</option>			
+<option value="1.1">1.1</option>		
+</select>
+<br>	
+체인 : <input id="chain" type="text" size="3" value="1">
+<br>	
+공업 : <input id="atk_up" type="text" size="5" value="0">
+<br>
+<br>	
+<input onclick="Calc();" type="button" value="계산">
+<br>
+<br>	
+<table border="2">
+<tbody>
+<tr>
+<th>정령</th>
+</tr>
+<tr>		
+<td>	속성1 : <select id="char_type1" type="text">
+<option value="1">화</option>						
+<option value="2">수</option>						
+<option value="3">뇌</option>						
+<option value="4">광</option>						
+<option value="5">암</option>					
+</select>				
+속성2 : <select id="char_type2" type="text">						
+<option value="0"/>						
+<option value="1">화</option>						
+<option value="2">수</option>						
+<option value="3">뇌</option>						
+<option value="4">광</option>						
+<option value="5">암</option>					
+</select>
+<br>				
+패널 : <select id="pannel_type" type="text">						
+<option value="1">주속성</option>						
+<option value="2">부속성</option>						
+<option value="3">주/부속성</option>					
+</select>
+<br>				
+공격 : <input id="char_atk" type="text" size="5">
+<br>				
+화 AS % : <input id="char_red_as_per" type="text" size="5" value="100">
+<br>				
+수 AS % : <input id="char_blue_as_per" type="text" size="5" value="100">
+<br>			
+뇌 AS % : <input id="char_yellow_as_per" type="text" size="5" value="100">
+<br>				
+광 AS % : <input id="char_white_as_per" type="text" size="5" value="100">
+<br>				
+암 AS % : <input id="char_black_as_per" type="text" size="5" value="100">
+<br>
+</td>
+</tr>
+<tr>		
+<th>산출데미지 : 메인/서브</th>
+</tr>
+<tr>		
+<td>화몹에 : <input id="char_red1_damage" type="text" size="5" readonly=""> / <input id="char_red2_damage" type="text" size="5" readonly=""> = <input id="char_red_total" type="text" size="5" readonly="">
+<br>			
+수몹에 : <input id="char_blue1_damage" type="text" size="5" readonly=""> / <input id="char_blue2_damage" type="text" size="5" readonly=""> = <input id="char_blue_total" type="text" size="5" readonly="">
+<br>			
+뇌몹에 : <input id="char_yellow1_damage" type="text" size="5" readonly=""> / <input id="char_yellow2_damage" type="text" size="5" readonly=""> = <input id="char_yellow_total" type="text" size="5" readonly="">
+<br>			
+광몹에 : <input id="char_white1_damage" type="text" size="5" readonly=""> / <input id="char_white2_damage" type="text" size="5" readonly=""> = <input id="char_white_total" type="text" size="5" readonly="">
+<br>			
+암몹에 : <input id="char_black1_damage" type="text" size="5" readonly=""> / <input id="char_black2_damage" type="text" size="5" readonly=""> = <input id="char_black_total" type="text" size="5" readonly="">
+<br>	
+</td>
+</tr>
+</tbody>
+</table><p> </p><p>
+<br>
+</p>
+</font><p>
+<br>
+</p>
+</body>
 </html>
