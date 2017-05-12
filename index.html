@@ -1,51 +1,89 @@
 <html>
-<head>
-<meta charset="EUC-KR">
-</head>
-<body>
-<font size="2"><br>
-  난수 : <select id="rand" type="text">
-  <option value="0.9">0.9</option>			
-  <option value="1.0">1.0</option>			
-  <option value="1.1">1.1</option>		
-  </select><br>	
-  체인 : <input id="chain" type="text" size="3" value="1"><br>	
-  공업 : <input id="atk_up" type="text" size="5" value="0"><br><br>	
-  <input onclick="Calc();" type="button" value="계산"><br><br>	
-  <table border="2">
-    <tbody><tr> <th>정령</th>	</tr>	<tr>		
-      <td>	속성1 : <select id="char_type1" type="text">
-        <option value="1">화</option>						
-        <option value="2">수</option>						
-        <option value="3">뇌</option>						
-        <option value="4">광</option>						
-        <option value="5">암</option>					
-       </select>				
-        속성2 : <select id="char_type2" type="text">						
-        <option value="0"></option>						
-        <option value="1">화</option>						
-        <option value="2">수</option>						
-        <option value="3">뇌</option>						
-        <option value="4">광</option>						
-        <option value="5">암</option>					
-        </select><br>				
-        패널 : <select id="pannel_type" type="text">						
-        <option value="1">주속성</option>						
-        <option value="2">부속성</option>						
-        <option value="3">주/부속성</option>					
-        </select><br>				
-        공격 : <input id="char_atk" type="text" size="5"><br>				
-        화 AS % : <input id="char_red_as_per" type="text" size="5" value="100"><br>				
-        수 AS % : <input id="char_blue_as_per" type="text" size="5" value="100"><br>			
-        뇌 AS % : <input id="char_yellow_as_per" type="text" size="5" value="100"><br>				
-        광 AS % : <input id="char_white_as_per" type="text" size="5" value="100"><br>				
-        암 AS % : <input id="char_black_as_per" type="text" size="5" value="100"><br>	</td></tr>	<tr>		
-      <th>산출데미지 : 메인/서브</th>	</tr>	<tr>		
-      <td>화몹에 : <input id="char_red1_damage" type="text" size="5" readonly=""> / <input id="char_red2_damage" type="text" size="5" readonly=""> = <input id="char_red_total" type="text" size="5" readonly=""><br>			
-        수몹에 : <input id="char_blue1_damage" type="text" size="5" readonly=""> / <input id="char_blue2_damage" type="text" size="5" readonly=""> = <input id="char_blue_total" type="text" size="5" readonly=""><br>			
-        뇌몹에 : <input id="char_yellow1_damage" type="text" size="5" readonly=""> / <input id="char_yellow2_damage" type="text" size="5" readonly=""> = <input id="char_yellow_total" type="text" size="5" readonly=""><br>			
-        광몹에 : <input id="char_white1_damage" type="text" size="5" readonly=""> / <input id="char_white2_damage" type="text" size="5" readonly=""> = <input id="char_white_total" type="text" size="5" readonly=""><br>			
-        암몹에 : <input id="char_black1_damage" type="text" size="5" readonly=""> / <input id="char_black2_damage" type="text" size="5" readonly=""> = <input id="char_black_total" type="text" size="5" readonly=""><br>	
-      </td></tr>	</tbody></table><p> </p><p><br></p></font><p><br></p>
-</body>
-</html>
+	<head>
+		<meta charset="EUC-KR">
+		</head>
+		<body>
+			<font size="2">
+				<br>
+난수 : <select id="rand" type="text">
+						<option value="0.9">0.9</option>			
+						<option value="1.0">1.0</option>			
+						<option value="1.1">1.1</option>		
+					</select>
+					<br>	
+체인 : <input id="chain" type="text" size="3" value="1">
+							<br>	
+공업 : <input id="atk_up" type="text" size="5" value="0">
+									<br>
+										<br>	
+											<input onclick="Calc();" type="button" value="계산">
+												<br>
+													<br>	
+														<table border="2">
+															<tbody>
+																<tr>
+																	<th>정령</th>
+																</tr>
+																<tr>		
+																	<td>	속성1 : <select id="char_type1" type="text">
+																			<option value="1">화</option>						
+																			<option value="2">수</option>						
+																			<option value="3">뇌</option>						
+																			<option value="4">광</option>						
+																			<option value="5">암</option>					
+																		</select>				
+속성2 : <select id="char_type2" type="text">						
+																			<option value="0"/>						
+																			<option value="1">화</option>						
+																			<option value="2">수</option>						
+																			<option value="3">뇌</option>						
+																			<option value="4">광</option>						
+																			<option value="5">암</option>					
+																		</select>
+																		<br>				
+패널 : <select id="pannel_type" type="text">						
+																				<option value="1">주속성</option>						
+																				<option value="2">부속성</option>						
+																				<option value="3">주/부속성</option>					
+																			</select>
+																			<br>				
+공격 : <input id="char_atk" type="text" size="5">
+																					<br>				
+화 AS % : <input id="char_red_as_per" type="text" size="5" value="100">
+																							<br>				
+수 AS % : <input id="char_blue_as_per" type="text" size="5" value="100">
+																									<br>			
+뇌 AS % : <input id="char_yellow_as_per" type="text" size="5" value="100">
+																											<br>				
+광 AS % : <input id="char_white_as_per" type="text" size="5" value="100">
+																													<br>				
+암 AS % : <input id="char_black_as_per" type="text" size="5" value="100">
+																															<br>
+																															</td>
+																														</tr>
+																														<tr>		
+																															<th>산출데미지 : 메인/서브</th>
+																														</tr>
+																														<tr>		
+																															<td>화몹에 : <input id="char_red1_damage" type="text" size="5" readonly=""> / <input id="char_red2_damage" type="text" size="5" readonly=""> = <input id="char_red_total" type="text" size="5" readonly="">
+																																			<br>			
+수몹에 : <input id="char_blue1_damage" type="text" size="5" readonly=""> / <input id="char_blue2_damage" type="text" size="5" readonly=""> = <input id="char_blue_total" type="text" size="5" readonly="">
+																																							<br>			
+뇌몹에 : <input id="char_yellow1_damage" type="text" size="5" readonly=""> / <input id="char_yellow2_damage" type="text" size="5" readonly=""> = <input id="char_yellow_total" type="text" size="5" readonly="">
+																																											<br>			
+광몹에 : <input id="char_white1_damage" type="text" size="5" readonly=""> / <input id="char_white2_damage" type="text" size="5" readonly=""> = <input id="char_white_total" type="text" size="5" readonly="">
+																																															<br>			
+암몹에 : <input id="char_black1_damage" type="text" size="5" readonly=""> / <input id="char_black2_damage" type="text" size="5" readonly=""> = <input id="char_black_total" type="text" size="5" readonly="">
+																																																			<br>	
+																																																			</td>
+																																																		</tr>
+																																																	</tbody>
+																																																</table><p> </p><p>
+																																																	<br>
+																																																	</p>
+																																																</font><p>
+																																																	<br>
+																																																	</p>
+																																																</body>
+																																															</html>
+																																															
